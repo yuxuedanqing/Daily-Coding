@@ -2,8 +2,12 @@ package apkjartest;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import apkjartest.entity.Book;
+import util.DateTimeUtils;
 
 /**
  * 泛型练习
@@ -13,9 +17,10 @@ import apkjartest.entity.Book;
 public class Generic {
 
 	public static void main(String[] args) {
-		Book<String> book = new Book<String>("English");
+		//Book<String> book = new Book<String>("English");
 		//System.out.println("book:"+book.getData());
-		testClass(book);
+		//testClass(book);
+		testDateTimeUtils();
 	}
 	
 	public static void testDiff() {
@@ -40,5 +45,10 @@ public class Generic {
 		 
 		 StringBuffer hql = new StringBuffer("from "+className+" t1 where 1=1");
 		 System.out.println(hql);
+	}
+	
+	public static void testDateTimeUtils() {
+		LocalDate cdt = DateTimeUtils.parseLocalDate("2018-10-19","yyyy-MM-dd");
+		System.out.println(cdt);
 	}
 }
